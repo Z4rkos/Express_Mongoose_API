@@ -1,0 +1,36 @@
+ul {
+  border-bottom: gray solid 2px;
+  list-style-type: none;
+  margin: 0px !important;
+  padding: 0;
+  overflow: hidden;
+  background-image: linear-gradient(to top, rgb(22, 22, 22), rgb(63, 63, 63));
+}
+
+li {
+  display: inline;
+  float: left;
+}
+
+li a {
+  color: white;
+  text-shadow: black 3px 3px 2px;
+  display: block;
+  text-align: center;
+  padding: 18px 50px;
+  text-decoration: none;
+  background-image: linear-gradient(to top, rgb(22, 22, 22), rgb(63, 63, 63));
+  border-right: 1px solid white;
+}
+
+li a:hover {
+  background-image: linear-gradient(to top, rgb(17, 0, 0), rgb(78, 0, 0));
+}
+
+.left_nav {
+  float: right;
+}
+.left_nav a {
+  border-left: 1px solid white;
+  border-right: hidden;
+}
