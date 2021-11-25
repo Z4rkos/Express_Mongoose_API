@@ -1,0 +1,13 @@
+table {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+td {
+  overflow: auto;
+  margin: auto;
+  color: white;
+  padding: 10px 0px;
+}
