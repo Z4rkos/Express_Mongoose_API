@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const { findById } = require("../static/models/Post");
 const verify = require("./verifyJWT");
 const User = require('../static/models/User');
 

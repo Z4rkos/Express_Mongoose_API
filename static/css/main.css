@@ -1,11 +1,69 @@
-body,
+body {
+  background-color: #000000;
+  opacity: 0.75;
+  background-image: linear-gradient(
+      30deg,
+      #101010 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #101010 87.5%,
+      #101010
+    ),
+    linear-gradient(
+      150deg,
+      #101010 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #101010 87.5%,
+      #101010
+    ),
+    linear-gradient(
+      30deg,
+      #101010 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #101010 87.5%,
+      #101010
+    ),
+    linear-gradient(
+      150deg,
+      #101010 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #101010 87.5%,
+      #101010
+    ),
+    linear-gradient(
+      60deg,
+      #10101077 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #10101077 75%,
+      #10101077
+    ),
+    linear-gradient(
+      60deg,
+      #10101077 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #10101077 75%,
+      #10101077
+    );
+  background-size: 48px 84px;
+  background-position: 0 0, 0 0, 24px 42px, 24px 42px, 0 0, 24px 42px;
+  margin: 0;
+  height: 100%;
+}
+
 html {
+  opacity: unset;
   background-image: linear-gradient(
     to right,
-    rgb(0, 0, 0),
-    rgb(49, 49, 49),
-    rgb(0, 0, 0)
+    rgb(0, 1, 46),
+    rgb(5, 43, 0),
+    rgb(49, 0, 0)
   );
+
   background-repeat: no-repeat;
   margin: 0;
   height: 100%;
@@ -19,4 +77,16 @@ h1 {
   font-size: 50px;
   color: rgb(197, 0, 0);
   text-shadow: black 2px 2px 2px;
+}
+
+.imgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  max-width: 50%;
+  max-height: 1000px;
+  align-items: center;
 }

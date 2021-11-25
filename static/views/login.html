@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/login.css" />
 
-    <title>register</title>
+    <title>Login</title>
   </head>
   <body>
     <nav>
@@ -57,10 +57,20 @@
             body: JSON.stringify({'email': email, 'password': password})
         });
         console.log(JSON.stringify({"email": email, "password": password}))
-        await response.json().then((data) => {
-            window.alert("Logged in!")
+        try {
+          await response.json().then((data) => {
+            if (data.includes("eyJhb") == false){
+              window.alert(data);
+              
+            }
+            window.alert("Logged in")
             document.cookie = `authentication = ${data}`;
+            return window.location.href = "http://localhost:8000";
         })
+        } catch (err) {
+          console.log(err)
+        }
+
         
       })
   </script>
