@@ -17,9 +17,9 @@
         <li><a href="posts">Posts</a></li>
         <li><a href="test">Test</a></li>
         <li class="left_nav">
-          <a style="color: red" href="register">Register</a>
+          <a href="register">Register</a>
         </li>
-        <li class="left_nav"><a href="login">Login</a></li>
+        <li class="left_nav"><a style="color: red" href="login">Login</a></li>
       </ul>
     </nav>
     <form>
@@ -27,11 +27,7 @@
        <div class="forms-container">
         <div class="singin-singup"></div>
         <form id="signInForm" action="" class="sign-in-form">
-            <h2 class="title">Sign Up Bitch</h2>
-
-            <div class="input_field">
-              <input id="usernameInput" type="text" value="" placeholder="Username">
-          </div>
+            <h2 class="title">Sign In Bitch</h2>
 
             <div class="input_field">
                 <input id="emailInput" type="text" value="" placeholder="Email">
@@ -52,21 +48,19 @@
       signInBtn.addEventListener("click", async (e) => {
         
         e.preventDefault()
-        var username = document.getElementById("usernameInput").value;
         var email = document.getElementById("emailInput").value;
         var password = document.getElementById("passwordInput").value;
 
-        const response = await fetch("http://localhost:8000/api/user/register", {
+        const response = await fetch("http://localhost:8000/api/user/login", {
             method: "POST",
             headers: { 'Content-Type': 'application/json', 'Accept': '*/*' },
-            body: JSON.stringify({'username':username, 'email': email, 'password': password})
+            body: JSON.stringify({'email': email, 'password': password})
         });
+        console.log(JSON.stringify({"email": email, "password": password}))
         await response.json().then((data) => {
-              window.alert(data)
-        }, err => {
-          if (err) window.alert(data.text);
-        }
-        )
+            window.alert("Logged in!")
+            document.cookie = `authentication = ${data}`;
+        })
         
       })
   </script>

@@ -1,18 +1,19 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const fs = require('fs');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const cookieParser = require("cookie-parser")
+
 
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 require('dotenv/config');
 
 
 // Automatic routing of static files
 app.use(express.static("static"));
-
 
 // Posts routing and middleware
 const postsRoute = require('./routes/posts');
@@ -33,6 +34,15 @@ app.use('/test', testRoute)
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname + "/static/views/index.html"))
 });
+
+app.get("/login", (req, res) => {
+    res.sendFile(path.join(__dirname + "/static/views/login.html"))
+})
+
+app.get("/register", (req, res) => {
+    res.sendFile(path.join(__dirname + "/static/views/register.html"))
+})
+
 
 // Just for testing
 app.get("/test", (req, res) => {

@@ -31,7 +31,7 @@ router.post('/register', async (req, res) => {
     });
     try {
         const newUser = await user.save();
-        res.send({user: newUser._id});
+        res.json({user: newUser._id});
     
     } catch (err) {
         res.json(err)
@@ -51,7 +51,9 @@ router.post('/login', async (req, res) => {
         if (!validPassword) return res.status(400).send("Invalid email or password.");
 
         const token = jwt.sign({_id: user._id}, process.env.SECRET_TOKEN, { expiresIn: '1200s'});
-        res.header('authentication', token).send(token);
+        res.json(token);
+
+
 
         //res.send("Logged in as " + user.username + ".")
     }

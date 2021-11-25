@@ -1,10 +1,8 @@
-const router = require('express').Router();
 const jwt = require("jsonwebtoken");
 
 
 module.exports = function authenticateToken(req, res, next) {
-    const header = req.headers['authentication']
-    const token = header;
+    const token = req.cookies.authentication;
 
     if (token == null) return res.status(401).send("Access Denied.")
 
