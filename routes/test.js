@@ -5,9 +5,15 @@ const User = require('../static/models/User');
 
 
 router.get('/', verify, async (req, res) => {
-    const user = await User.findOne({_id: req.id});
-    res.send("Hello " + user.username + ", wazzup?")
-
+    try {
+        const user = await User.findById({_id: req.user._id});
+        res.json(user)
+    } catch (err) {
+        console.log(err)
+        res.json("Something went wrong")
+    }
+    
+    
 })
 
 

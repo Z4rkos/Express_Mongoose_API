@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieParser = require("cookie-parser")
 
-
 app.use(bodyParser.json());
 app.use(cookieParser());
 
@@ -27,7 +26,7 @@ app.use('/api/user', authRoute)
 
 // Test route for jwt stuffs.
 const testRoute = require('./routes/test');
-app.use('/test', testRoute)
+app.use('/api/test', testRoute)
 
 
 // Base route

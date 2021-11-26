@@ -4,7 +4,35 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test</title>
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/test.css" />
+    <title>Index</title>
   </head>
-  <body></body>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="posts">Posts</a></li>
+        <li><a style="color: red" href="test">Test</a></li>
+        <li class="left_nav"><a href="register">Register</a></li>
+        <li class="left_nav"><a href="login">Login</a></li>
+      </ul>
+    </nav>
+  <body>
+    <h1 id="test" class="wierd_text">Nothing</h1>
+  </body>
+  <script>
+    async function getUsername() {
+      console.log("testing")
+      const response = await fetch("http://localhost:8000/api/test");
+      await response.json().then((data) => {
+        document.getElementById("test").innerHTML = `Who are you ${data.username}?`;
+      }, err => {
+        if (err) window.alert(data);
+      }
+      )     
+    }
+    getUsername();
+</script>
 </html>

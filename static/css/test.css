@@ -1,0 +1,4 @@
+.wierd_text {
+  color: rgb(0, 0, 0);
+  text-shadow: rgb(255, 0, 0) 1px 1px, rgba(255, 0, 0, 0.678) -2px -2px 1px;
+}

@@ -62,9 +62,15 @@
             body: JSON.stringify({'username':username, 'email': email, 'password': password})
         });
         await response.json().then((data) => {
-              window.alert(data)
+          if (data.length == 24) {
+              window.alert("Sucsess!")
+              return window.location.href = "http://localhost:8000/login";
+              //window.alert(data)
+          }
+          window.alert(data);
+
         }, err => {
-          if (err) window.alert(data.text);
+          if (err) window.alert(data);
         }
         )
         
