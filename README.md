@@ -8,5 +8,5 @@ TO DO:
 
 -   More comments.
 -   Expand JWT functionality.
--   Add add a frontend for the post APIs.
+-   Add a frontend for the post APIs.
 -   Learn React so i can use that instad if the horror that is vanilla js for frontend.
